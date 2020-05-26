@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+    php:
+        build: docker/images/php-fpm-7.2
+        user: "dev"
+        volumes:
+            - ./data/composer:/home/dev/composer
+            - ${HOME}/.ssh:/home/dev/.ssh
+            - ../:/var/www/html/app
+            - ./cfg/php/dev.ini:/usr/local/etc/php/php.ini
