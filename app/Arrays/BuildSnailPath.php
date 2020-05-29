@@ -93,9 +93,9 @@ class BuildSnailPath
         for ($step = 0; $step < count($matrix); $step++) {
             if ($step % 2 == 0) {
                 $start = $step == 0 ? 0 : $step - 1;
-                for ($i = 0 + $start; $i < count($matrix) - $start; $i++) {
-                    if ($i == (0 + $start)) {
-                        for ($j = 0 + $start; $j < count($matrix[$i]) - $start; $j++) {
+                for ($i = $start; $i < count($matrix) - $start; $i++) {
+                    if ($i == $start) {
+                        for ($j = $start; $j < count($matrix[$i]) - $start; $j++) {
                             $res[] = $matrix[$i][$j];
                         }
                     } else {
